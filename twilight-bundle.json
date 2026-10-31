@@ -1,576 +1,578 @@
 {
-  "name": {
-    "ar": "هلال — عناصر المواسم والمناسبات",
-    "en": "Hilal — Seasons & Occasions Components"
-  },
-  "description": {
-    "ar": "5 عناصر تحوّل متجرك لأجواء المناسبة بضغطة: رمضان، العيد، اليوم الوطني، يوم التأسيس، الجمعة البيضاء. بانر بزخارف متحركة، شريط إعلانات، عدّاد للمناسبة يتحول لتهنئة، بطاقة تهنئة بكود هدية تنتشر بالواتساب، وعروض المناسبة.",
-    "en": "5 components that make your store festive in one click (Ramadan, Eid, National Day, Founding Day, White Friday): animated hero, ticker, occasion countdown, shareable greeting card with gift code, and occasion offers."
-  },
-  "author": {
-    "name": "Khaled Alshamrani",
-    "email": "fooz1980k@gmail.com",
-    "url": "https://github.com/fooz1980k-sudo/tw-hilal"
-  },
-  "repository": "https://github.com/fooz1980k-sudo/tw-hilal",
-  "components": [
-    {
-      "title": "هلال · بانر المناسبة",
-      "icon": "sicon-moon",
-      "name": "hilal-hero",
-      "fields": [
-        {
-          "id": "occasion",
-          "icon": "sicon-calendar-star",
-          "type": "items",
-          "format": "radio-list",
-          "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
-          "required": true,
-          "options": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            },
-            {
-              "label": "العيد",
-              "value": "eid",
-              "key": "eid"
-            },
-            {
-              "label": "اليوم الوطني",
-              "value": "national",
-              "key": "national"
-            },
-            {
-              "label": "يوم التأسيس",
-              "value": "founding",
-              "key": "founding"
-            },
-            {
-              "label": "الجمعة البيضاء",
-              "value": "friday",
-              "key": "friday"
-            }
-          ],
-          "selected": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            }
-          ]
-        },
-        {
-          "id": "eyebrow",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "سطر صغير",
-          "format": "text",
-          "required": false,
-          "maxLength": 40,
-          "value": "",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "title",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "العنوان",
-          "format": "text",
-          "required": false,
-          "maxLength": 80,
-          "value": "رمضان كريم",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "subtitle",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "الوصف",
-          "format": "textarea",
-          "required": false,
-          "maxLength": 200,
-          "value": "",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "button",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "نص الزر",
-          "format": "text",
-          "required": false,
-          "maxLength": 30,
-          "value": "تسوّق عروض الموسم",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "link",
-          "icon": "sicon-link",
-          "type": "string",
-          "format": "url",
-          "label": "رابط الزر",
-          "required": false,
-          "value": "",
-          "placeholder": "https://"
-        },
-        {
-          "id": "image",
-          "icon": "sicon-image-landscape",
-          "type": "string",
-          "format": "image",
-          "label": "صورة منتج شفافة (اختياري — بدل الزخارف)",
-          "required": false,
-          "value": ""
-        }
-      ],
-      "key": "2bf5e09a-feaa-5059-a034-e776de9424ad",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-hero.jpg"
+    "name": {
+        "ar": "هلال — عناصر المواسم والمناسبات",
+        "en": "Hilal — Seasons & Occasions Components"
     },
-    {
-      "title": "هلال · شريط الإعلانات",
-      "icon": "sicon-megaphone",
-      "name": "hilal-ticker",
-      "fields": [
-        {
-          "id": "occasion",
-          "icon": "sicon-calendar-star",
-          "type": "items",
-          "format": "radio-list",
-          "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
-          "required": true,
-          "options": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            },
-            {
-              "label": "العيد",
-              "value": "eid",
-              "key": "eid"
-            },
-            {
-              "label": "اليوم الوطني",
-              "value": "national",
-              "key": "national"
-            },
-            {
-              "label": "يوم التأسيس",
-              "value": "founding",
-              "key": "founding"
-            },
-            {
-              "label": "الجمعة البيضاء",
-              "value": "friday",
-              "key": "friday"
-            }
-          ],
-          "selected": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            }
-          ]
-        },
-        {
-          "id": "messages",
-          "icon": "sicon-list",
-          "type": "collection",
-          "format": "collection",
-          "required": true,
-          "minLength": 1,
-          "maxLength": 8,
-          "item_label": "إعلان",
-          "fields": [
-            {
-              "id": "text",
-              "icon": "sicon-format-text-alt",
-              "type": "string",
-              "label": "النص",
-              "format": "text",
-              "required": false,
-              "maxLength": 100,
-              "value": "",
-              "placeholder": "",
-              "multilanguage": true
-            },
-            {
-              "id": "link",
-              "icon": "sicon-link",
-              "type": "string",
-              "format": "url",
-              "label": "رابط (اختياري)",
-              "required": false,
-              "value": "",
-              "placeholder": "https://"
-            }
-          ],
-          "value": [
-            {
-              "text": "شحن مجاني للطلبات فوق 200 ر.س",
-              "link": ""
-            }
-          ]
-        },
-        {
-          "id": "speed",
-          "icon": "sicon-hashtag",
-          "type": "number",
-          "format": "slider",
-          "label": "السرعة",
-          "required": false,
-          "value": 30,
-          "minimum": 1,
-          "maximum": 55
-        },
-        {
-          "id": "closable",
-          "icon": "sicon-toggle-off",
-          "type": "boolean",
-          "format": "switch",
-          "label": "زر إغلاق",
-          "required": false,
-          "value": true
-        }
-      ],
-      "key": "f4b8d233-a261-5bb6-8fbc-4c4e32a7e935",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-ticker.jpg"
+    "description": {
+        "ar": "5 عناصر تحوّل متجرك لأجواء المناسبة بضغطة: رمضان، العيد، اليوم الوطني، يوم التأسيس، الجمعة البيضاء. بانر بزخارف متحركة، شريط إعلانات، عدّاد للمناسبة يتحول لتهنئة، بطاقة تهنئة بكود هدية تنتشر بالواتساب، وعروض المناسبة.",
+        "en": "5 components that make your store festive in one click (Ramadan, Eid, National Day, Founding Day, White Friday): animated hero, ticker, occasion countdown, shareable greeting card with gift code, and occasion offers."
     },
-    {
-      "title": "هلال · عدّاد المناسبة",
-      "icon": "sicon-time",
-      "name": "hilal-countdown",
-      "fields": [
-        {
-          "id": "occasion",
-          "icon": "sicon-calendar-star",
-          "type": "items",
-          "format": "radio-list",
-          "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
-          "required": true,
-          "options": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            },
-            {
-              "label": "العيد",
-              "value": "eid",
-              "key": "eid"
-            },
-            {
-              "label": "اليوم الوطني",
-              "value": "national",
-              "key": "national"
-            },
-            {
-              "label": "يوم التأسيس",
-              "value": "founding",
-              "key": "founding"
-            },
-            {
-              "label": "الجمعة البيضاء",
-              "value": "friday",
-              "key": "friday"
-            }
-          ],
-          "selected": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            }
-          ]
-        },
-        {
-          "id": "title",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "العنوان",
-          "format": "text",
-          "required": false,
-          "maxLength": 120,
-          "value": "باقي على العيد",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "date",
-          "icon": "sicon-calendar-time",
-          "type": "string",
-          "format": "datetime",
-          "inputType": "date",
-          "label": "تاريخ المناسبة",
-          "required": true,
-          "value": ""
-        },
-        {
-          "id": "greeting",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "التهنئة (تظهر يوم المناسبة)",
-          "format": "text",
-          "required": false,
-          "maxLength": 60,
-          "value": "عيدكم مبارك",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "button",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "نص الزر",
-          "format": "text",
-          "required": false,
-          "maxLength": 30,
-          "value": "جهّز هدايا العيد",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "link",
-          "icon": "sicon-link",
-          "type": "string",
-          "format": "url",
-          "label": "رابط الزر",
-          "required": false,
-          "value": "",
-          "placeholder": "https://"
-        }
-      ],
-      "key": "eca9e4fb-bc14-5446-9066-8b04faf9f09f",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-countdown.jpg"
+    "author": {
+        "name": "Khaled Alshamrani",
+        "email": "fooz1980k@gmail.com",
+        "url": "https://github.com/fooz1980k-sudo/tw-hilal"
     },
-    {
-      "title": "هلال · بطاقة تهنئة",
-      "icon": "sicon-mail",
-      "name": "hilal-greeting",
-      "fields": [
+    "repository": "https://github.com/fooz1980k-sudo/tw-hilal",
+    "components": [
         {
-          "id": "occasion",
-          "icon": "sicon-calendar-star",
-          "type": "items",
-          "format": "radio-list",
-          "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
-          "required": true,
-          "options": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            },
-            {
-              "label": "العيد",
-              "value": "eid",
-              "key": "eid"
-            },
-            {
-              "label": "اليوم الوطني",
-              "value": "national",
-              "key": "national"
-            },
-            {
-              "label": "يوم التأسيس",
-              "value": "founding",
-              "key": "founding"
-            },
-            {
-              "label": "الجمعة البيضاء",
-              "value": "friday",
-              "key": "friday"
-            }
-          ],
-          "selected": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            }
-          ]
+            "title": "هلال · بانر المناسبة",
+            "icon": "sicon-moon",
+            "name": "hilal-hero",
+            "fields": [
+                {
+                    "id": "occasion",
+                    "icon": "sicon-calendar-star",
+                    "type": "items",
+                    "format": "radio-list",
+                    "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
+                    "required": true,
+                    "options": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        },
+                        {
+                            "label": "العيد",
+                            "value": "eid",
+                            "key": "eid"
+                        },
+                        {
+                            "label": "اليوم الوطني",
+                            "value": "national",
+                            "key": "national"
+                        },
+                        {
+                            "label": "يوم التأسيس",
+                            "value": "founding",
+                            "key": "founding"
+                        },
+                        {
+                            "label": "الجمعة البيضاء",
+                            "value": "friday",
+                            "key": "friday"
+                        }
+                    ],
+                    "selected": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        }
+                    ]
+                },
+                {
+                    "id": "eyebrow",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "سطر صغير",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 40,
+                    "value": "",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "title",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 80,
+                    "value": "رمضان كريم",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "subtitle",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "الوصف",
+                    "format": "textarea",
+                    "required": false,
+                    "maxLength": 200,
+                    "value": "",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "button",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "نص الزر",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 30,
+                    "value": "تسوّق عروض الموسم",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "link",
+                    "icon": "sicon-link",
+                    "type": "string",
+                    "format": "url",
+                    "label": "رابط الزر",
+                    "required": false,
+                    "value": "",
+                    "placeholder": "https://"
+                },
+                {
+                    "id": "image",
+                    "icon": "sicon-image-landscape",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة منتج شفافة (اختياري — بدل الزخارف)",
+                    "required": false,
+                    "value": ""
+                }
+            ],
+            "key": "2bf5e09a-feaa-5059-a034-e776de9424ad",
+            "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-hero.jpg"
         },
         {
-          "id": "title",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "العنوان",
-          "format": "text",
-          "required": false,
-          "maxLength": 120,
-          "value": "عيدكم مبارك",
-          "placeholder": "",
-          "multilanguage": true
+            "title": "هلال · شريط الإعلانات",
+            "icon": "sicon-megaphone",
+            "name": "hilal-ticker",
+            "fields": [
+                {
+                    "id": "occasion",
+                    "icon": "sicon-calendar-star",
+                    "type": "items",
+                    "format": "radio-list",
+                    "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
+                    "required": true,
+                    "options": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        },
+                        {
+                            "label": "العيد",
+                            "value": "eid",
+                            "key": "eid"
+                        },
+                        {
+                            "label": "اليوم الوطني",
+                            "value": "national",
+                            "key": "national"
+                        },
+                        {
+                            "label": "يوم التأسيس",
+                            "value": "founding",
+                            "key": "founding"
+                        },
+                        {
+                            "label": "الجمعة البيضاء",
+                            "value": "friday",
+                            "key": "friday"
+                        }
+                    ],
+                    "selected": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        }
+                    ]
+                },
+                {
+                    "id": "messages",
+                    "icon": "sicon-list",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 8,
+                    "item_label": "إعلان",
+                    "fields": [
+                        {
+                            "id": "text",
+                            "icon": "sicon-format-text-alt",
+                            "type": "string",
+                            "label": "النص",
+                            "format": "text",
+                            "required": false,
+                            "maxLength": 100,
+                            "value": "",
+                            "placeholder": "",
+                            "multilanguage": true
+                        },
+                        {
+                            "id": "link",
+                            "icon": "sicon-link",
+                            "type": "string",
+                            "format": "url",
+                            "label": "رابط (اختياري)",
+                            "required": false,
+                            "value": "",
+                            "placeholder": "https://"
+                        }
+                    ],
+                    "value": [
+                        {
+                            "text": "شحن مجاني للطلبات فوق 200 ر.س",
+                            "link": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "speed",
+                    "icon": "sicon-hashtag",
+                    "type": "number",
+                    "format": "slider",
+                    "label": "السرعة",
+                    "required": false,
+                    "value": 30,
+                    "minimum": 1,
+                    "maximum": 55
+                },
+                {
+                    "id": "closable",
+                    "icon": "sicon-toggle-off",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "زر إغلاق",
+                    "required": false,
+                    "value": true
+                }
+            ],
+            "key": "f4b8d233-a261-5bb6-8fbc-4c4e32a7e935",
+            "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-ticker.jpg"
         },
         {
-          "id": "message",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "الرسالة",
-          "format": "textarea",
-          "required": false,
-          "maxLength": 300,
-          "value": "كل عام وأنتم بخير، وهذي هدية صغيرة منّا لكم",
-          "placeholder": "",
-          "multilanguage": true
+            "title": "هلال · عدّاد المناسبة",
+            "icon": "sicon-time",
+            "name": "hilal-countdown",
+            "fields": [
+                {
+                    "id": "occasion",
+                    "icon": "sicon-calendar-star",
+                    "type": "items",
+                    "format": "radio-list",
+                    "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
+                    "required": true,
+                    "options": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        },
+                        {
+                            "label": "العيد",
+                            "value": "eid",
+                            "key": "eid"
+                        },
+                        {
+                            "label": "اليوم الوطني",
+                            "value": "national",
+                            "key": "national"
+                        },
+                        {
+                            "label": "يوم التأسيس",
+                            "value": "founding",
+                            "key": "founding"
+                        },
+                        {
+                            "label": "الجمعة البيضاء",
+                            "value": "friday",
+                            "key": "friday"
+                        }
+                    ],
+                    "selected": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        }
+                    ]
+                },
+                {
+                    "id": "title",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 120,
+                    "value": "باقي على العيد",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "date",
+                    "icon": "sicon-calendar-time",
+                    "type": "string",
+                    "format": "datetime",
+                    "inputType": "date",
+                    "label": "تاريخ المناسبة",
+                    "required": true,
+                    "value": ""
+                },
+                {
+                    "id": "greeting",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "التهنئة (تظهر يوم المناسبة)",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 60,
+                    "value": "عيدكم مبارك",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "button",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "نص الزر",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 30,
+                    "value": "جهّز هدايا العيد",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "link",
+                    "icon": "sicon-link",
+                    "type": "string",
+                    "format": "url",
+                    "label": "رابط الزر",
+                    "required": false,
+                    "value": "",
+                    "placeholder": "https://"
+                }
+            ],
+            "key": "eca9e4fb-bc14-5446-9066-8b04faf9f09f",
+            "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-countdown.jpg"
         },
         {
-          "id": "coupon",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "كود الهدية (أنشئه من عروض سلة)",
-          "format": "text",
-          "required": false,
-          "maxLength": 30,
-          "value": "",
-          "placeholder": ""
+            "title": "هلال · بطاقة تهنئة",
+            "icon": "sicon-mail",
+            "name": "hilal-greeting",
+            "fields": [
+                {
+                    "id": "occasion",
+                    "icon": "sicon-calendar-star",
+                    "type": "items",
+                    "format": "radio-list",
+                    "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
+                    "required": true,
+                    "options": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        },
+                        {
+                            "label": "العيد",
+                            "value": "eid",
+                            "key": "eid"
+                        },
+                        {
+                            "label": "اليوم الوطني",
+                            "value": "national",
+                            "key": "national"
+                        },
+                        {
+                            "label": "يوم التأسيس",
+                            "value": "founding",
+                            "key": "founding"
+                        },
+                        {
+                            "label": "الجمعة البيضاء",
+                            "value": "friday",
+                            "key": "friday"
+                        }
+                    ],
+                    "selected": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        }
+                    ]
+                },
+                {
+                    "id": "title",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 120,
+                    "value": "عيدكم مبارك",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "message",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "الرسالة",
+                    "format": "textarea",
+                    "required": false,
+                    "maxLength": 300,
+                    "value": "كل عام وأنتم بخير، وهذي هدية صغيرة منّا لكم",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "coupon",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "كود الهدية (أنشئه من عروض سلة)",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 30,
+                    "value": "",
+                    "placeholder": ""
+                },
+                {
+                    "id": "gift",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "نص الكود",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 30,
+                    "value": "هديتنا لك",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "share",
+                    "icon": "sicon-toggle-off",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "زر مشاركة واتساب",
+                    "required": false,
+                    "value": true
+                },
+                {
+                    "id": "sign",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "التوقيع",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 40,
+                    "value": "",
+                    "placeholder": "",
+                    "multilanguage": true
+                }
+            ],
+            "key": "42c2519b-ce7e-5937-9994-de4422c505fa",
+            "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-greeting.jpg"
         },
         {
-          "id": "gift",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "نص الكود",
-          "format": "text",
-          "required": false,
-          "maxLength": 30,
-          "value": "هديتنا لك",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "share",
-          "icon": "sicon-toggle-off",
-          "type": "boolean",
-          "format": "switch",
-          "label": "زر مشاركة واتساب",
-          "required": false,
-          "value": true
-        },
-        {
-          "id": "sign",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "التوقيع",
-          "format": "text",
-          "required": false,
-          "maxLength": 40,
-          "value": "",
-          "placeholder": "",
-          "multilanguage": true
+            "title": "هلال · عروض المناسبة",
+            "icon": "sicon-discount",
+            "name": "hilal-offers",
+            "fields": [
+                {
+                    "id": "occasion",
+                    "icon": "sicon-calendar-star",
+                    "type": "items",
+                    "format": "radio-list",
+                    "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
+                    "required": true,
+                    "options": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        },
+                        {
+                            "label": "العيد",
+                            "value": "eid",
+                            "key": "eid"
+                        },
+                        {
+                            "label": "اليوم الوطني",
+                            "value": "national",
+                            "key": "national"
+                        },
+                        {
+                            "label": "يوم التأسيس",
+                            "value": "founding",
+                            "key": "founding"
+                        },
+                        {
+                            "label": "الجمعة البيضاء",
+                            "value": "friday",
+                            "key": "friday"
+                        }
+                    ],
+                    "selected": [
+                        {
+                            "label": "رمضان",
+                            "value": "ramadan",
+                            "key": "ramadan"
+                        }
+                    ]
+                },
+                {
+                    "id": "title",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "العنوان",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 120,
+                    "value": "",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "subtitle",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "الوصف",
+                    "format": "textarea",
+                    "required": false,
+                    "maxLength": 200,
+                    "value": "",
+                    "placeholder": "",
+                    "multilanguage": true
+                },
+                {
+                    "id": "products",
+                    "icon": "sicon-box",
+                    "type": "items",
+                    "label": "اختر المنتجات",
+                    "placeholder": "ابحث في منتجاتك...",
+                    "format": "dropdown-list",
+                    "source": "products",
+                    "options": [],
+                    "required": true,
+                    "selected": [],
+                    "searchable": true,
+                    "multichoice": true,
+                    "minLength": 1,
+                    "maxLength": 12
+                },
+                {
+                    "id": "ribbon",
+                    "icon": "sicon-format-text-alt",
+                    "type": "string",
+                    "label": "شارة المنتجات بدون خصم",
+                    "format": "text",
+                    "required": false,
+                    "maxLength": 20,
+                    "value": "مختار للموسم",
+                    "placeholder": "",
+                    "multilanguage": true
+                }
+            ],
+            "key": "d9cbc082-2480-5873-8010-35b710c884b0",
+            "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-offers.jpg"
         }
-      ],
-      "key": "42c2519b-ce7e-5937-9994-de4422c505fa",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-greeting.jpg"
-    },
-    {
-      "title": "هلال · عروض المناسبة",
-      "icon": "sicon-discount",
-      "name": "hilal-offers",
-      "fields": [
-        {
-          "id": "occasion",
-          "icon": "sicon-calendar-star",
-          "type": "items",
-          "format": "radio-list",
-          "label": "المناسبة (تتغير الألوان والزخارف تلقائياً)",
-          "required": true,
-          "options": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            },
-            {
-              "label": "العيد",
-              "value": "eid",
-              "key": "eid"
-            },
-            {
-              "label": "اليوم الوطني",
-              "value": "national",
-              "key": "national"
-            },
-            {
-              "label": "يوم التأسيس",
-              "value": "founding",
-              "key": "founding"
-            },
-            {
-              "label": "الجمعة البيضاء",
-              "value": "friday",
-              "key": "friday"
-            }
-          ],
-          "selected": [
-            {
-              "label": "رمضان",
-              "value": "ramadan",
-              "key": "ramadan"
-            }
-          ]
-        },
-        {
-          "id": "title",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "العنوان",
-          "format": "text",
-          "required": false,
-          "maxLength": 120,
-          "value": "",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "subtitle",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "الوصف",
-          "format": "textarea",
-          "required": false,
-          "maxLength": 200,
-          "value": "",
-          "placeholder": "",
-          "multilanguage": true
-        },
-        {
-          "id": "products",
-          "icon": "sicon-box",
-          "type": "items",
-          "label": "اختر المنتجات",
-          "placeholder": "ابحث في منتجاتك...",
-          "format": "dropdown-list",
-          "source": "products",
-          "options": [],
-          "required": true,
-          "selected": [],
-          "searchable": true,
-          "multichoice": true,
-          "minLength": 1,
-          "maxLength": 12
-        },
-        {
-          "id": "ribbon",
-          "icon": "sicon-format-text-alt",
-          "type": "string",
-          "label": "شارة المنتجات بدون خصم",
-          "format": "text",
-          "required": false,
-          "maxLength": 20,
-          "value": "مختار للموسم",
-          "placeholder": "",
-          "multilanguage": true
-        }
-      ],
-      "key": "d9cbc082-2480-5873-8010-35b710c884b0",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-offers.jpg"
-    }
-  ]
+    ],
+    "author_email": "fooz1980k@gmail.com",
+    "support_url": ""
 }
