@@ -1,0 +1,16 @@
+<!doctype html><html dir="rtl" lang="ar"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=block" rel="stylesheet">
+<style>body{margin:0;font-family:Tajawal,sans-serif;background:#faf7f1;color:#1b1408;--color-primary:#b88a44} .sp{height:1px}</style>
+<script>
+const P = {
+  1: { id: 1, name: 'طقم الإشراقة الوردي', url: '#', image: { url: 'img/p1.jpg' }, price: 320, sale_price: 260, regular_price: 320, rating: { stars: 4.8, count: 214 }, quantity: 3, is_available: true },
+  2: { id: 2, name: 'زبدة الجسم الطبيعية', url: '#', image: { url: 'img/p2.jpg' }, price: 190, regular_price: 190, rating: { stars: 4.6, count: 98 }, quantity: 40, is_available: true },
+  3: { id: 3, name: 'صندوق هدية فاخر', url: '#', image: { url: 'img/p3.jpg' }, price: 540, sale_price: 420, regular_price: 540, rating: { stars: 4.9, count: 61 }, quantity: 12, is_available: true },
+  4: { id: 4, name: 'باليت ظلال الغروب', url: '#', image: { url: 'img/p4.jpg' }, price: 145, regular_price: 145, rating: { stars: 4.4, count: 33 }, quantity: 0, is_available: false },
+};
+window.Salla = { onReady: async () => {}, money: (n) => `${Number(n).toLocaleString('en')} ر.س`, success: (m) => console.log('toast', m),
+  product: { api: { getDetails: async (id) => ({ data: P[id] }) } }, cart: { addItem: async () => ({}), api: { details: async () => ({ data: { cart: { sub_total: 0 } } }) } } };
+window.HINTS = {"hilal-hero": {}, "hilal-ticker": {}, "hilal-countdown": {}, "hilal-greeting": {}, "hilal-offers": {}};
+</script><script type="module" src="bundle.js"></script></head><body>
+<salla-hilal-hero id="hilal-hero"></salla-hilal-hero><salla-hilal-ticker id="hilal-ticker"></salla-hilal-ticker><salla-hilal-countdown id="hilal-countdown"></salla-hilal-countdown><salla-hilal-greeting id="hilal-greeting"></salla-hilal-greeting><salla-hilal-offers id="hilal-offers"></salla-hilal-offers>
+<script>const cfg = {"hilal-hero": {"occasion": "ramadan", "title": "رمضان أجمل معنا", "subtitle": "هدايا رمضان بتغليف فاخر، وتوصيل قبل الإفطار.", "button": "تسوّق عروض رمضان", "link": "#"}, "hilal-ticker": {"occasion": "national", "messages": [{"text": "🇸🇦 خصم 23٪ بمناسبة اليوم الوطني"}, {"text": "شحن مجاني للطلبات فوق 200 ر.س"}, {"text": "تغليف أخضر مجاني لكل الهدايا"}]}, "hilal-countdown": {"occasion": "eid", "title": "باقي على العيد", "date": "2026-11-03T21:17:34.544949Z", "button": "جهّز هدايا العيد", "link": "#"}, "hilal-greeting": {"occasion": "founding", "title": "يوم بدينا", "message": "نحتفي بتاريخ عمره ثلاثة قرون،\nوهذي هدية منّا لكم بالمناسبة.", "coupon": "1727", "gift": "خصم 17٪", "sign": "فريق المتجر"}, "hilal-offers": {"occasion": "friday", "title": "عروض الجمعة البيضاء", "subtitle": "نختار لك أقوى عرض تلقائياً.", "products": [{"value": 1}, {"value": 2}, {"value": 3}, {"value": 4}], "ribbon": "مختار"}}; for (const [id, c] of Object.entries(cfg)) document.getElementById(id).config = c;</script></body></html>
