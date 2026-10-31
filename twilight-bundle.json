@@ -10,9 +10,9 @@
   "author": {
     "name": "Khaled Alshamrani",
     "email": "fooz1980k@gmail.com",
-    "url": "https://github.com/fooz1980k-sudo/hilal-bundle"
+    "url": "https://github.com/fooz1980k-sudo/tw-hilal"
   },
-  "repository": "https://github.com/fooz1980k-sudo/hilal-bundle",
+  "repository": "https://github.com/fooz1980k-sudo/tw-hilal",
   "components": [
     {
       "title": "هلال · بانر المناسبة",
@@ -130,7 +130,7 @@
         }
       ],
       "key": "2bf5e09a-feaa-5059-a034-e776de9424ad",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/hilal-bundle/main/previews/hilal-hero.jpg"
+      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-hero.jpg"
     },
     {
       "title": "هلال · شريط الإعلانات",
@@ -241,7 +241,7 @@
         }
       ],
       "key": "f4b8d233-a261-5bb6-8fbc-4c4e32a7e935",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/hilal-bundle/main/previews/hilal-ticker.jpg"
+      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-ticker.jpg"
     },
     {
       "title": "هلال · عدّاد المناسبة",
@@ -348,7 +348,7 @@
         }
       ],
       "key": "eca9e4fb-bc14-5446-9066-8b04faf9f09f",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/hilal-bundle/main/previews/hilal-countdown.jpg"
+      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-countdown.jpg"
     },
     {
       "title": "هلال · بطاقة تهنئة",
@@ -467,7 +467,7 @@
         }
       ],
       "key": "42c2519b-ce7e-5937-9994-de4422c505fa",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/hilal-bundle/main/previews/hilal-greeting.jpg"
+      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-greeting.jpg"
     },
     {
       "title": "هلال · عروض المناسبة",
@@ -570,7 +570,7 @@
         }
       ],
       "key": "d9cbc082-2480-5873-8010-35b710c884b0",
-      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/hilal-bundle/main/previews/hilal-offers.jpg"
+      "image": "https://raw.githubusercontent.com/fooz1980k-sudo/tw-hilal/main/previews/hilal-offers.jpg"
     }
   ]
 }
