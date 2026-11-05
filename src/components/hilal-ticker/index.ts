@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { base } from '../../shared/styles';
 import { occ } from '../../shared/occasion';
-import { txt } from '../../shared/salla';
+import { localizedString } from '../../shared/salla';
 
 /** Slim announcement ticker with occasion colours; the shopper can dismiss it for the session. */
 export default class HilalTicker extends LitElement {
@@ -20,9 +20,9 @@ export default class HilalTicker extends LitElement {
   connectedCallback() { super.connectedCallback(); try { this.closed = sessionStorage.getItem('hilal-ticker') === '1'; } catch { /* */ } }
   private close() { this.closed = true; try { sessionStorage.setItem('hilal-ticker', '1'); } catch { /* */ } }
   render() {
-    const c = this.config ?? {}; const o = occ(c.occasion); const ms = (c.messages ?? []).filter((m) => txt(m.text));
+    const c = this.config ?? {}; const o = occ(c.occasion); const ms = (c.messages ?? []).filter((m) => localizedString(m.text));
     if (this.closed || !ms.length) return html``;
-    const row = (dup: boolean) => ms.map((m) => html`<span class="m" aria-hidden=${dup}>${m.link ? html`<a href=${m.link}>${txt(m.text)}</a>` : txt(m.text)}</span>`);
+    const row = (dup: boolean) => ms.map((m) => html`<span class="m" aria-hidden=${dup}>${m.link ? html`<a href=${m.link}>${localizedString(m.text)}</a>` : localizedString(m.text)}</span>`);
     const sets = Math.max(2, Math.ceil(6 / ms.length) * 2);
     return html`<div class="t" role="region" aria-label="إعلانات" style="--o-bg:${o.bg};--o-fg:${o.fg};--o-acc:${o.acc};--d:${Math.max(12, 70 - (c.speed ?? 30))}s">
       <div class="vp"><div class="tr">${Array.from({ length: sets }, (_, i) => row(i > 0))}</div></div>

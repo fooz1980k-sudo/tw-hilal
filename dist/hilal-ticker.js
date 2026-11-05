@@ -1,6 +1,6 @@
-import { css as d, LitElement as m, html as c } from "lit";
-import { property as b, state as h } from "lit/decorators.js";
-const u = d`
+import { css as p, LitElement as x, html as l } from "lit";
+import { property as h, state as u } from "lit/decorators.js";
+const y = p`
   :host { display: block; --tf-accent: var(--tf-custom, var(--color-primary, #c9a45c)); --tf-ink: #0f0c18; --tf-ivory: #f6f1e7; --tf-mut: #a59bc2;
     --tf-gold: linear-gradient(135deg, #f5d68a, #c9a45c 55%, #9a7634); font-family: inherit; direction: inherit; }
   :host([hidden]) { display: none; }
@@ -27,20 +27,45 @@ const u = d`
   var t;
   return g[String((Array.isArray(a) ? (t = a[0]) == null ? void 0 : t.value : a) ?? "ramadan")] ?? g.ramadan;
 };
-d`
+p`
   .occ { position: relative; overflow: hidden; color: var(--o-fg); background: var(--o-bg); }
   .orn { position: absolute; pointer-events: none; color: var(--o-acc); }
   .sway { transform-origin: top center; animation: sway 6s ease-in-out infinite; } @keyframes sway { 50% { transform: rotate(4deg); } }
   .tw { animation: tw 3s ease-in-out infinite; } @keyframes tw { 50% { opacity: .25; transform: scale(.8); } }
   .gold { color: var(--o-acc); }
 `;
-const f = (a) => String(a && typeof a == "object" ? a[(document.documentElement.lang || "ar").slice(0, 2)] ?? a.ar ?? "" : a ?? "");
-var y = Object.defineProperty, x = (a, t, n, l) => {
-  for (var e = void 0, s = a.length - 1, r; s >= 0; s--)
-    (r = a[s]) && (e = r(t, n, e) || e);
-  return e && y(t, n, e), e;
+const m = () => window.Salla, w = () => {
+  var a, t, e, r, n;
+  try {
+    const o = ((t = (a = m()) == null ? void 0 : a.lang) == null ? void 0 : t.locale) ?? ((n = (r = (e = m()) == null ? void 0 : e.config) == null ? void 0 : r.get) == null ? void 0 : n.call(r, "user.language_code"));
+    if (typeof o == "string" && o) return o.slice(0, 2);
+  } catch {
+  }
+  return (document.documentElement.lang || "ar").slice(0, 2);
+}, f = (a) => {
+  if (a == null) return "";
+  if (typeof a == "string") {
+    const t = a.trim();
+    if (t.startsWith("{") && t.endsWith("}"))
+      try {
+        return f(JSON.parse(t));
+      } catch {
+      }
+    return a;
+  }
+  if (typeof a == "number" || typeof a == "boolean") return String(a);
+  if (typeof a == "object") {
+    const t = a, e = t[w()] ?? t.ar ?? t.en ?? Object.values(t).find((r) => typeof r == "string" && r);
+    return typeof e == "string" ? e : "";
+  }
+  return "";
 };
-const p = class p extends m {
+var k = Object.defineProperty, b = (a, t, e, r) => {
+  for (var n = void 0, o = a.length - 1, i; o >= 0; o--)
+    (i = a[o]) && (n = i(t, e, n) || n);
+  return n && k(t, e, n), n;
+};
+const d = class d extends x {
   constructor() {
     super(...arguments), this.closed = !1;
   }
@@ -59,15 +84,15 @@ const p = class p extends m {
     }
   }
   render() {
-    const t = this.config ?? {}, n = v(t.occasion), l = (t.messages ?? []).filter((r) => f(r.text));
-    if (this.closed || !l.length) return c``;
-    const e = (r) => l.map((o) => c`<span class="m" aria-hidden=${r}>${o.link ? c`<a href=${o.link}>${f(o.text)}</a>` : f(o.text)}</span>`), s = Math.max(2, Math.ceil(6 / l.length) * 2);
-    return c`<div class="t" role="region" aria-label="إعلانات" style="--o-bg:${n.bg};--o-fg:${n.fg};--o-acc:${n.acc};--d:${Math.max(12, 70 - (t.speed ?? 30))}s">
-      <div class="vp"><div class="tr">${Array.from({ length: s }, (r, o) => e(o > 0))}</div></div>
-      ${t.closable !== !1 ? c`<button class="x" aria-label="إغلاق" @click=${this.close}>×</button>` : ""}</div>`;
+    const t = this.config ?? {}, e = v(t.occasion), r = (t.messages ?? []).filter((i) => f(i.text));
+    if (this.closed || !r.length) return l``;
+    const n = (i) => r.map((s) => l`<span class="m" aria-hidden=${i}>${s.link ? l`<a href=${s.link}>${f(s.text)}</a>` : f(s.text)}</span>`), o = Math.max(2, Math.ceil(6 / r.length) * 2);
+    return l`<div class="t" role="region" aria-label="إعلانات" style="--o-bg:${e.bg};--o-fg:${e.fg};--o-acc:${e.acc};--d:${Math.max(12, 70 - (t.speed ?? 30))}s">
+      <div class="vp"><div class="tr">${Array.from({ length: o }, (i, s) => n(s > 0))}</div></div>
+      ${t.closable !== !1 ? l`<button class="x" aria-label="إغلاق" @click=${this.close}>×</button>` : ""}</div>`;
   }
 };
-p.styles = [u, d`
+d.styles = [y, p`
     .t { position: relative; display: flex; align-items: center; color: var(--o-fg); background: var(--o-bg); overflow: hidden; height: 44px; font-size: 14px; font-weight: 700; }
     .vp { flex: 1; overflow: hidden; mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
     .tr { display: flex; width: max-content; animation: run var(--d) linear infinite; } .t:hover .tr { animation-play-state: paused; }
@@ -76,14 +101,14 @@ p.styles = [u, d`
     a { color: inherit; text-decoration: none; } a:hover { color: var(--o-acc); }
     .x { border: 0; background: none; color: inherit; font-size: 18px; cursor: pointer; padding: 0 14px; opacity: .7; }
   `];
-let i = p;
-x([
-  b({ type: Object })
-], i.prototype, "config");
-x([
-  h()
-], i.prototype, "closed");
-typeof i < "u" && i.registerSallaComponent("salla-hilal-ticker");
+let c = d;
+b([
+  h({ type: Object })
+], c.prototype, "config");
+b([
+  u()
+], c.prototype, "closed");
+typeof c < "u" && c.registerSallaComponent("salla-hilal-ticker");
 export {
-  i as default
+  c as default
 };

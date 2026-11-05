@@ -3,7 +3,7 @@ import { property, state } from 'lit/decorators.js';
 import { base } from '../../shared/styles';
 import { card, cardCss } from '../../shared/card';
 import { occ, occCss } from '../../shared/occasion';
-import { Prod, products, txt } from '../../shared/salla';
+import { Prod, products, localizedString } from '../../shared/salla';
 
 /** Occasion offers: chosen products in a festive frame, with the best deal auto-highlighted. */
 export default class HilalOffers extends LitElement {
@@ -23,7 +23,7 @@ export default class HilalOffers extends LitElement {
     const pct = (p: Prod) => (p.regular > p.price ? (p.regular - p.price) / p.regular : 0); const best = list.reduce<Prod | null>((b, p) => (pct(p) > (b ? pct(b) : 0) ? p : b), null);
     const lamp = { lantern: '🏮', star: '🌙', palm: '🇸🇦', geo: '🏰', tag: '🏷️' }[o.orn];
     return html`<div class="wrap"><section class="occ" style="--o-bg:${o.bg};--o-fg:${o.fg};--o-acc:${o.acc}"><span class="lamp" aria-hidden="true">${lamp}</span>
-      <div class="hd"><div><span class="eyebrow">✦ ${o.label}</span><h2 class="title">${txt(c.title) || 'عروض ' + o.label}</h2>${txt(c.subtitle) ? html`<p class="sub">${txt(c.subtitle)}</p>` : ''}</div></div>
-      <div class="grid">${this.list === null ? html`<div class="skel" style="height:320px"></div>` : list.map((p) => html`<div class=${p === best ? 'best' : ''}>${card(p, p === best ? 'أقوى عرض 🔥' : pct(p) ? `خصم ${Math.round(pct(p) * 100)}٪` : txt(c.ribbon))}</div>`)}</div></section></div>`;
+      <div class="hd"><div><span class="eyebrow">✦ ${o.label}</span><h2 class="title">${localizedString(c.title) || 'عروض ' + o.label}</h2>${localizedString(c.subtitle) ? html`<p class="sub">${localizedString(c.subtitle)}</p>` : ''}</div></div>
+      <div class="grid">${this.list === null ? html`<div class="skel" style="height:320px"></div>` : list.map((p) => html`<div class=${p === best ? 'best' : ''}>${card(p, p === best ? 'أقوى عرض 🔥' : pct(p) ? `خصم ${Math.round(pct(p) * 100)}٪` : localizedString(c.ribbon))}</div>`)}</div></section></div>`;
   }
 }

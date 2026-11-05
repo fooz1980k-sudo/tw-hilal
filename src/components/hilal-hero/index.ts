@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { base } from '../../shared/styles';
 import { occ, occCss, ornament } from '../../shared/occasion';
-import { txt } from '../../shared/salla';
+import { localizedString } from '../../shared/salla';
 
 /** Occasion hero: one switch turns the store festive (Ramadan, Eid, National Day, Founding Day, White Friday) with animated ornaments. */
 export default class HilalHero extends LitElement {
@@ -18,10 +18,10 @@ export default class HilalHero extends LitElement {
     @media (max-width: 760px) { .img { display: none; } .orn { opacity: .35 !important; max-width: 90% !important; } }
   `];
   render() {
-    const c = this.config ?? {}; const o = occ(c.occasion); const t = txt(c.title) || o.label; const [first, ...rest] = t.split(' ');
+    const c = this.config ?? {}; const o = occ(c.occasion); const t = localizedString(c.title) || o.label; const [first, ...rest] = t.split(' ');
     return html`<div class="wrap"><section class="occ" style="--o-bg:${o.bg};--o-fg:${o.fg};--o-acc:${o.acc}">${c.image ? '' : ornament(o.orn)}
       ${c.image ? html`<img class="img" src=${c.image} alt="" />` : ''}
-      <div class="in"><span class="eyebrow">✦ ${txt(c.eyebrow) || o.label}</span><h1>${first} <em>${rest.join(' ')}</em></h1>
-        ${txt(c.subtitle) ? html`<p>${txt(c.subtitle)}</p>` : ''}${txt(c.button) && c.link ? html`<a class="btn" href=${c.link}>${txt(c.button)} ←</a>` : ''}</div></section></div>`;
+      <div class="in"><span class="eyebrow">✦ ${localizedString(c.eyebrow) || o.label}</span><h1>${first} <em>${rest.join(' ')}</em></h1>
+        ${localizedString(c.subtitle) ? html`<p>${localizedString(c.subtitle)}</p>` : ''}${localizedString(c.button) && c.link ? html`<a class="btn" href=${c.link}>${localizedString(c.button)} ←</a>` : ''}</div></section></div>`;
   }
 }
