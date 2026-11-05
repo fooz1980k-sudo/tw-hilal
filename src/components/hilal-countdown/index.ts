@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { base } from '../../shared/styles';
 import { occ, occCss, ornament } from '../../shared/occasion';
-import { txt } from '../../shared/salla';
+import { localizedString } from '../../shared/salla';
 
 /** Countdown to the occasion; when the day arrives it switches itself to the greeting. */
 export default class HilalCountdown extends LitElement {
@@ -27,9 +27,9 @@ export default class HilalCountdown extends LitElement {
     const c = this.config ?? {}; const o = occ(c.occasion); const s = this.left; const p = (n: number) => String(n).padStart(2, '0');
     if (!c.date) return html`<div class="wrap"><p class="sub">حدد تاريخ المناسبة من إعدادات العنصر.</p></div>`;
     return html`<div class="wrap"><section class="occ" style="--o-bg:${o.bg};--o-fg:${o.fg};--o-acc:${o.acc}">${ornament(o.orn)}<div class="in">
-      ${s ? html`<span class="eyebrow">⏳ العد التنازلي</span><h2 class="title">${txt(c.title) || 'باقي على ' + o.label}</h2>
+      ${s ? html`<span class="eyebrow">⏳ العد التنازلي</span><h2 class="title">${localizedString(c.title) || 'باقي على ' + o.label}</h2>
           <div class="clock" role="timer">${[[Math.floor(s / 86400), 'يوم'], [Math.floor((s % 86400) / 3600), 'ساعة'], [Math.floor((s % 3600) / 60), 'دقيقة'], [s % 60, 'ثانية']].map(([v, l]) => html`<div class="u"><b>${p(v as number)}</b><span>${l}</span></div>`)}</div>`
-        : html`<span class="eyebrow">✦</span><h2 class="g">${txt(c.greeting) || o.label}</h2>`}
-      ${txt(c.button) && c.link ? html`<a class="btn" href=${c.link}>${txt(c.button)} ←</a>` : ''}</div></section></div>`;
+        : html`<span class="eyebrow">✦</span><h2 class="g">${localizedString(c.greeting) || o.label}</h2>`}
+      ${localizedString(c.button) && c.link ? html`<a class="btn" href=${c.link}>${localizedString(c.button)} ←</a>` : ''}</div></section></div>`;
   }
 }

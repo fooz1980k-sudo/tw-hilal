@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { base } from '../../shared/styles';
 import { occ, occCss, ornament } from '../../shared/occasion';
-import { toast, txt } from '../../shared/salla';
+import { toast, localizedString } from '../../shared/salla';
 
 /** Greeting card with an occasion gift code: copy in one tap or share to WhatsApp (brings friends to the store). */
 export default class HilalGreeting extends LitElement {
@@ -20,12 +20,12 @@ export default class HilalGreeting extends LitElement {
   `];
   private async copy() { const c = this.config?.coupon ?? ''; try { await navigator.clipboard.writeText(c); } catch { /* */ } this.copied = true; toast(`تم نسخ الكود ${c}`); setTimeout(() => (this.copied = false), 1800); }
   render() {
-    const c = this.config ?? {}; const o = occ(c.occasion); const msg = txt(c.message);
-    const share = `${txt(c.title) || o.label} 🌙\n${msg}${c.coupon ? `\nكود الهدية: ${c.coupon}` : ''}\n${location.origin}`;
+    const c = this.config ?? {}; const o = occ(c.occasion); const msg = localizedString(c.message);
+    const share = `${localizedString(c.title) || o.label} 🌙\n${msg}${c.coupon ? `\nكود الهدية: ${c.coupon}` : ''}\n${location.origin}`;
     return html`<div class="wrap"><div class="card occ" style="--o-bg:${o.bg};--o-fg:${o.fg};--o-acc:${o.acc}">${ornament(o.orn)}<div class="in">
-      <span class="eyebrow" style="color:var(--o-acc)">✉️ بطاقة تهنئة</span><h2>${txt(c.title) || o.label}</h2>${msg ? html`<p>${msg}</p>` : ''}
-      ${c.coupon ? html`<button class="cp" @click=${this.copy}><span>${txt(c.gift) || 'هديتنا لك'}</span><code>${c.coupon}</code><small>${this.copied ? 'تم النسخ ✓' : 'اضغط للنسخ'}</small></button>` : ''}
+      <span class="eyebrow" style="color:var(--o-acc)">✉️ بطاقة تهنئة</span><h2>${localizedString(c.title) || o.label}</h2>${msg ? html`<p>${msg}</p>` : ''}
+      ${c.coupon ? html`<button class="cp" @click=${this.copy}><span>${localizedString(c.gift) || 'هديتنا لك'}</span><code>${c.coupon}</code><small>${this.copied ? 'تم النسخ ✓' : 'اضغط للنسخ'}</small></button>` : ''}
       ${c.share !== false ? html`<div class="row"><a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(share)}">شاركها على واتساب</a></div>` : ''}
-      ${txt(c.sign) ? html`<div class="sg">— ${txt(c.sign)}</div>` : ''}</div></div></div>`;
+      ${localizedString(c.sign) ? html`<div class="sg">— ${localizedString(c.sign)}</div>` : ''}</div></div></div>`;
   }
 }
